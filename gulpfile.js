@@ -86,7 +86,7 @@ function copy() {
 	return src([
 			"./src/fonts/*.{woff2,woff}",
 			"./src/*.ico",
-			"./src/img/**/*.{svg,jpg,jpeg,png,webp,avif}",
+			"./src/img/**/*.{svg,jpg,jpeg,png,webp,avif,gif}",
 			"./src/favicons/*",
 			"./src/*.webmanifest"
 		], {

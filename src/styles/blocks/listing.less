@@ -1,0 +1,57 @@
+.listing__list {
+	margin: 0;
+	padding-left: 40px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 1.6;
+	font-family: "Maitree";
+	color: #915110;
+	font-style: italic;
+
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&:first-child::before {
+		content: '';
+		position: absolute;
+		bottom: -47px;
+		left: -20px;
+		display: block;
+		width: 89px;
+		height: 75px;
+		background-image: url(../../img/green-arrow.svg);
+	}
+
+	&:nth-child(2) {
+		color: rgb(219, 82, 1);
+	}
+}
+
+.listing__wrap {
+	position: relative;
+	padding-top: 70px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 10px;
+		width: 100px;
+		height: 100px;
+		background-image: url(../../img/natural-label.png);
+		background-size: contain;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 97px;
+		left: 10px;
+		width: 80px;
+		height: 80px;
+		background-image: url(../../img/office-product-label.png);
+		background-size: contain;
+	}
+}

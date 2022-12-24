@@ -1,0 +1,56 @@
+.form__discount {
+	position: relative;
+	box-sizing: border-box;
+	max-width: 180px;
+	margin: 0 auto 50px;
+	padding: 12px 10px 25px;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 1.2;
+	font-family: "Maitree", sans-serif;
+	text-align: center;
+	color: rgb(255, 14, 1);
+	font-style: italic;
+	background-color: rgb(255, 255, 255);
+	border-width: 3px;
+	border-style: solid;
+	border-color: rgb(219, 82, 1);
+	border-radius: 0px 28px 28px;
+
+	& p {
+		margin: 0;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		width: 140px;
+		height: 55px;
+		margin: 0 auto;
+		background-image: url(../../img/discount.gif);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -65px;
+		left: 50%;
+		display: block;
+		width: 95px;
+		height: 95px;
+		margin: 0 auto;
+		background-image: url(../../img/down-arrow.gif);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		transform: translateX(-50%);
+	}
+}
+
+.form__spin {
+	position: relative;
+	padding: 15px;
+}

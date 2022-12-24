@@ -1,0 +1,30 @@
+.volume {
+	width: fit-content;
+	margin: 0 auto 29px;
+
+	& p {
+		position: relative;
+		width: fit-content;
+		padding: 10px 10px;
+		font-size: 13px;
+		line-height: 1.6;
+		font-family: "Open Sans", sans-serif;
+		color: rgb(0, 0, 0);
+		background-color: rgba(255, 255, 255, 0.86);
+
+		&:not(:last-child) {
+			margin-bottom: 18px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -7px;
+			left: -7px;
+			z-index: -1;
+			width: calc(100% + 7px);
+			height: calc(100% + 7px);
+			background-color: rgba(145, 81, 16, 0.35);
+		}
+	}
+}
