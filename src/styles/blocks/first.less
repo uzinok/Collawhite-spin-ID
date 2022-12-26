@@ -23,6 +23,10 @@
 	border-radius: 214px;
 	transform: rotate(-10deg);
 	text-decoration-line: underline;
+
+	@media (min-width: @min-lg) {
+		max-width: fit-content;
+	}
 }
 
 .first__block-img {
@@ -41,24 +45,35 @@
 	background-position: center;
 	background-size: contain;
 	transform: scale(-1, 1);
-}
 
-@media (max-width: 990px) {
-	.first__block-img::after {
-		content: "";
-		position: absolute;
-		right: -98px;
-		bottom: -139px;
-		z-index: -1;
-		width: 198px;
-		height: 324px;
-		background-image: url(../../img/leaf.png);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		transform: rotate(-135deg);
+	@media (min-width: 990px) {
+		width: 181px;
+		height: 181px;
+		background-image: url(../../img/natural-label.png);
 	}
 }
+
+.first__block-img::after {
+	content: "";
+	position: absolute;
+	right: -98px;
+	bottom: -139px;
+	z-index: -1;
+	width: 198px;
+	height: 324px;
+	background-image: url(../../img/leaf.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	transform: rotate(-135deg);
+
+	@media (min-width: @min-lg) {
+		width: 493px;
+		height: 572px;
+		z-index: -2;
+	}
+}
+
 
 .first__img-1 {
 	display: block;
@@ -67,6 +82,13 @@
 	margin: 0 auto;
 	border: 4px solid #fff;
 	transform: rotate(-3deg);
+
+	@media (min-width: @min-lg) {
+		position: relative;
+		z-index: -1;
+		width: 365px;
+		border-width: 7px;
+	}
 }
 
 .first__img-2 {
@@ -76,6 +98,11 @@
 	width: 98px;
 	border: 4px solid #fff;
 	transform: translateX(50%);
+
+	@media (min-width: @min-lg) {
+		width: 147px;
+		border-width: 5px;
+	}
 }
 
 .first-list {
@@ -135,5 +162,48 @@
 		height: 15px;
 		background-color: rgb(190, 0, 39);
 		border-radius: 50%;
+	}
+}
+
+@media (min-width: @min-lg) {
+	.first-section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.first-list {
+		display: flex;
+		flex-wrap: wrap;
+		order: 1;
+		padding-left: 15px;
+	}
+
+	.first-item {
+		align-items: center;
+		margin: 0 7px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		font-size: 16px;
+	}
+
+	.first-item::before {
+		width: 39px;
+		height: 39px;
+		margin-top: -3px;
+	}
+
+	.first-item.three::after {
+		top: 11px;
+		left: 25px;
+		width: 22px;
+		height: 22px;
+	}
+
+	.first {
+		order: 2;
+	}
+
+	.listing {
+		order: 3;
 	}
 }

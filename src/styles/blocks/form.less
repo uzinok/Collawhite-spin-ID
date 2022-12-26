@@ -22,6 +22,16 @@
 	border-color: rgb(219, 82, 1);
 	border-radius: 0px 28px 28px;
 
+	@media (min-width: @min-lg) {
+		max-width: 190px;
+		font-size: 18px;
+
+		&::after {
+			width: 150px;
+			height: 67px;
+		}
+	}
+
 	& p {
 		margin: 0;
 	}
@@ -58,7 +68,12 @@
 .form__spin {
 	position: relative;
 	width: 290px;
+	margin: 0 auto;
 	padding-top: 15px;
+
+	@media (min-width: @min-lg) {
+		width: 407px;
+	}
 }
 
 .form__spin-button {
