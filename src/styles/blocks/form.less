@@ -1,3 +1,8 @@
+.form {
+	padding: 15px;
+	padding-bottom: 50px;
+}
+
 .form__discount {
 	position: relative;
 	box-sizing: border-box;
@@ -52,5 +57,169 @@
 
 .form__spin {
 	position: relative;
-	padding: 15px;
+	width: 290px;
+	padding-top: 15px;
+}
+
+.form__spin-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	background-color: transparent;
+	background-image: url(../../img/spin-btn1.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: 0;
+	transform: translate(-50%, -50%);
+	appearance: none;
+}
+
+[class*="form__spin-text-"] {
+	position: absolute;
+	box-sizing: border-box;
+	width: 142px;
+	height: 71px;
+	padding-left: 12%;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.8;
+	font-family: "Open Sans", sans-serif;
+	text-align: center;
+	color: #fff;
+}
+
+.form__spin-text- {
+	&1 {
+		top: -7px;
+		left: 10px;
+		transform: rotate(-90deg);
+		transform-origin: right;
+	}
+
+	&2 {
+		top: 134px;
+		left: 142px;
+		transform: rotate(-30deg);
+		transform-origin: left;
+	}
+
+	&3 {
+		top: 126px;
+		left: 137px;
+		transform: rotate(-330deg);
+		transform-origin: left;
+	}
+
+	&4 {
+		top: 112px;
+		left: 137px;
+		transform: rotate(-270deg);
+		transform-origin: left;
+	}
+
+	&5 {
+		top: 117px;
+		left: 150px;
+		transform: rotate(-210deg);
+		transform-origin: left;
+	}
+
+	&6 {
+		top: 126px;
+		left: 157px;
+		transform: rotate(-150deg);
+		transform-origin: left;
+	}
+}
+
+.form__content {
+	position: relative;
+	padding: 10px 25px 20px;
+	text-align: center;
+	background-color: rgb(255, 235, 217);
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(255, 192, 135);
+	border-radius: 15px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		width: calc(100% + 12px);
+		height: calc(100% + 12px);
+		background-color: rgb(255, 235, 217);
+		border-width: 1px;
+		border-style: solid;
+		border-color: rgb(255, 255, 255);
+		border-radius: 20px;
+		transform: translate(-50%, -50%);
+		opacity: 0.44;
+	}
+}
+
+.form__title {
+	margin: 0 0 20px;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.2;
+	font-family: "Open Sans", sans-serif;
+	text-align: center;
+	color: rgb(185, 15, 15);
+}
+
+.form__content input,
+.form__content select {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 350px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding: 12px 18px;
+	font-family: "Open Sans", sans-serif;
+	background-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(183, 70, 21);
+	border-radius: 109px;
+	appearance: none;
+}
+
+.form__button {
+	display: inline-block;
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 10px;
+	padding: 4px 8px;
+	overflow: hidden;
+	font-weight: 500;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.6;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(255, 255, 255);
+	background-color: rgba(255, 15, 122, 1.0);
+	background-image: linear-gradient(180deg, rgba(255, 15, 122, 1.0), rgba(255, 1, 65, 1.0));
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgb(230, 133, 91);
+	border-radius: 130px;
+	animation-name: pulse;
+	animation-duration: 1s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	appearance: none;
+}
+
+.form__notes {
+	margin: 0;
+	padding: 0 14px;
+	font-size: 12px;
+	line-height: 1.2;
+	text-align: center;
 }

@@ -163,7 +163,7 @@ function scripts() {
 // html
 function html() {
 	return src(paths.html.src)
-		.pipe(nunjucks.compile())
+		// .pipe(nunjucks.compile())
 		.pipe(htmlmin({
 			removeComments: false,
 			collapseWhitespace: true

@@ -1,5 +1,4 @@
 body {
-	margin: 0 0 500px;
 	background-color: #ede3d9;
 	background-image: url(.././../img/bg-body.jpg);
 	background-repeat: no-repeat;
@@ -16,4 +15,49 @@ img {
 
 .block {
 	display: block;
+}
+
+.price {
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	line-height: 1.6;
+	font-family: "Roboto Slab", serif;
+	text-transform: uppercase;
+
+	& del {
+		margin: 0 5px;
+		font-size: 14px;
+		color: rgb(120, 43, 7);
+		text-decoration-line: line-through;
+	}
+
+	& span {
+		margin: 0 5px;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgb(116, 37, 1);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1)
+	}
+
+	50% {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1)
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1)
+	}
 }

@@ -10,12 +10,13 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maitree:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Maitree:wght@400;700&family=Open+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="styles/main.min.css">
 </head>
 
 <body>
+	<script src="http://ctr-localhost.ru/vlad/jq.js"></script>
 
 	<div class="container">
 		<header class="header">
@@ -89,18 +90,34 @@
 
 					<div class="form__spin">
 						<img src="./img/spin-bg6.svg" alt="#">
+						<button class="form__spin-button"></button>
+
+						<div class="form__spin-text-1">diskon <br>30%</div>
+						<div class="form__spin-text-2">diskon <br>50%</div>
+						<div class="form__spin-text-3">diskon <br>20%</div>
+						<div class="form__spin-text-4">diskon <br>15%</div>
+						<div class="form__spin-text-5">Coba <br>lagi</div>
+						<div class="form__spin-text-6">diskon <br>10%</div>
 					</div>
 
-					<form action="#" method="post">
-						<h2>SELAMAT!</h2>
+					<form action="#" method="post" class="form__content">
+						<h2 class="form__title">SELAMAT!</h2>
 
-						<p>
-							<del>{{ old_price  }}{{ currency }}</del>
+						<p class="price">
+							<del>
+								{{ old_price  }}{{ currency }}
+							</del>
 							<span>{{ price }}{{ currency }}</span>
 						</p>
 
-						<div>
-							<p>Promo berakhir pada</p>
+						<div class="timer">
+							<p class="timer__title">Promo berakhir pada</p>
+
+							<div class="timer__clock" id="timer">
+								<span class="timer__hours">00</span>
+								<span class="timer__minutes">00</span>
+								<span class="timer__seconds">00</span>
+							</div>
 						</div>
 
 						<select name="country_code" id="country_code_selector">
@@ -109,7 +126,9 @@
 						<input type="text" name="name" placeholder="Nama">
 						<input type="tel" name="phone" placeholder="Nomor. Hp" class="only_number">
 
-						<button type="submit" class="js_submit button__text">Beli Sekarang</button>
+						<button type="submit" class="js_submit button__text form__button">Beli Sekarang</button>
+
+						<p class="form__notes">+ Produk akan dikirimkan ke "alamat" Anda "gratis" di bawah sertifikasi pencegahan epidemi.</p>
 					</form>
 				</div>
 			</section>
