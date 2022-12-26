@@ -65,11 +65,11 @@ img {
 
 @keyframes rotation {
 	70% {
-		transform: rotate(1860deg)
+		transform: rotate(1860deg);
 	}
 
 	to {
-		transform: rotate(1827deg)
+		transform: rotate(1827deg);
 	}
 }
 
@@ -86,16 +86,16 @@ img {
 
 
 .rotation {
+	transition-timing-function: ease-in-out;
 	animation-name: rotation;
 	animation-duration: 7s;
 	animation-fill-mode: forwards;
-	transition-timing-function: ease-in-out
 }
 
 .rotation .form__spin-button {
+	transform-origin: center;
+	transition-timing-function: ease-in-out;
 	animation-name: rotation-button;
 	animation-duration: 7s;
 	animation-fill-mode: forwards;
-	transition-timing-function: ease-in-out;
-	transform-origin: center;
 }

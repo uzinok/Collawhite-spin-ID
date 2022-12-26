@@ -35,57 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initializeClock('timer', deadline);
 });
 
-// modal
-var dialogs = document.querySelectorAll('.dialog');
-for (var i = 0; i < dialogs.length; i++) {
-  dialog(dialogs[i]);
-}
-function dialog(elem) {
-  var openingButtons = document.querySelectorAll('[data-dialog="' + elem.id + '"]');
-  var closeButton = elem.querySelector('.dialog__close');
-  for (var _i = 0; _i < openingButtons.length; _i++) {
-    openingButtons[_i].addEventListener('click', opensModal);
-  }
-  closeButton.addEventListener('click', closesModal);
-  elem.addEventListener('click', function (e) {
-    if (elem == e.target) closesModal();
-  });
-  function opensModal() {
-    elem.showModal();
-    scrollLock();
-  }
-  function closesModal() {
-    elem.close();
-    scrollUnlock();
-  }
-  function scrollLock() {
-    document.body.classList.add('scroll-lock');
-    document.body.style.overflow = 'hidden';
-  }
-  function scrollUnlock() {
-    document.body.classList.remove('scroll-lock');
-    document.body.style.overflow = '';
-  }
-}
-
-// полифил
-
-var isBrowserNotSupportDialog = window.HTMLDialogElement === undefined;
-if (isBrowserNotSupportDialog) {
-  var script = document.createElement('script');
-  script.src = 'scripts/dialog-polyfill.js';
-  document.body.appendChild(script);
-  var link = document.createElement('link');
-  link.href = 'styles/dialog-polyfill.css';
-  link.rel = 'stylesheet';
-  document.head.appendChild(link);
-  script.addEventListener('load', function () {
-    var MyDialogs = document.querySelectorAll('dialog');
-    for (var _i2 = 0; _i2 < MyDialogs.length; _i2++) {
-      dialogPolyfill.registerDialog(MyDialogs[_i2]);
-    }
-  });
-}
 // spin
 window.addEventListener('load', function () {
   var formBlock = document.querySelector('.form');
@@ -97,10 +46,55 @@ window.addEventListener('load', function () {
       setTimeout(function () {
         spinButton.disabled = true;
         formBlock.classList.add('spin-end');
-        console.log($('.form__spin'));
         $('.form__spin').hide(150);
         $('.form__discount').hide(150);
         $('.form__content').show(150);
+        function dialog(elem) {
+          var closeButton = document.querySelector('.dialog__close');
+          var dialogButton = document.querySelector('.dialog__button');
+          opensModal();
+          dialogButton.addEventListener('click', closesModal);
+          closeButton.addEventListener('click', closesModal);
+          elem.addEventListener('click', function (e) {
+            if (elem == e.target) closesModal();
+          });
+          function opensModal() {
+            elem.showModal();
+            scrollLock();
+          }
+          function closesModal() {
+            elem.close();
+            scrollUnlock();
+          }
+          function scrollLock() {
+            document.body.classList.add('scroll-lock');
+            document.body.style.overflow = 'hidden';
+          }
+          function scrollUnlock() {
+            document.body.classList.remove('scroll-lock');
+            document.body.style.overflow = '';
+          }
+        }
+        dialog(document.querySelector('.dialog'));
+
+        // полифил
+
+        var isBrowserNotSupportDialog = window.HTMLDialogElement === undefined;
+        if (isBrowserNotSupportDialog) {
+          var script = document.createElement('script');
+          script.src = 'scripts/dialog-polyfill.js';
+          document.body.appendChild(script);
+          var link = document.createElement('link');
+          link.href = 'styles/dialog-polyfill.css';
+          link.rel = 'stylesheet';
+          document.head.appendChild(link);
+          script.addEventListener('load', function () {
+            var MyDialogs = document.querySelectorAll('dialog');
+            for (var i = 0; i < MyDialogs.length; i++) {
+              dialogPolyfill.registerDialog(MyDialogs[i]);
+            }
+          });
+        }
       }, 9000);
     }
   });
