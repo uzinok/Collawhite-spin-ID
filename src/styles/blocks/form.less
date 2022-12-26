@@ -69,7 +69,6 @@
 	position: relative;
 	width: 290px;
 	margin: 0 auto;
-	padding-top: 15px;
 
 	@media (min-width: @min-lg) {
 		width: 407px;
@@ -78,6 +77,7 @@
 
 .form__spin-button {
 	position: absolute;
+	z-index: 1;
 	top: 50%;
 	left: 50%;
 	width: 60px;
@@ -191,6 +191,7 @@
 }
 
 .form__content {
+	width: fit-content;
 	position: relative;
 	padding: 10px 25px 20px;
 	text-align: center;
@@ -199,6 +200,7 @@
 	border-style: solid;
 	border-color: rgb(255, 192, 135);
 	border-radius: 15px;
+	margin: 0 auto;
 
 	&::before {
 		content: '';
@@ -288,4 +290,8 @@
 	@media (min-width: @min-lg) {
 		font-size: 15px;
 	}
+}
+
+.form__content {
+	display: none;
 }

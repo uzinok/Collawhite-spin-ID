@@ -62,3 +62,40 @@ img {
 		transform: scale(1);
 	}
 }
+
+@keyframes rotation {
+	70% {
+		transform: rotate(1860deg)
+	}
+
+	to {
+		transform: rotate(1827deg)
+	}
+}
+
+@keyframes rotation-button {
+	70% {
+		transform: rotate(-1860deg) translate(-50%,-50%);
+	}
+
+	to {
+		transform: rotate(-1827deg) translate(-50%,-50%);
+	}
+}
+
+
+
+.rotation {
+	animation-name: rotation;
+	animation-duration: 7s;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in-out
+}
+
+.rotation .form__spin-button {
+	animation-name: rotation-button;
+	animation-duration: 7s;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in-out;
+	transform-origin: center;
+}

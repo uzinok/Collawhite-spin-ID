@@ -99,3 +99,24 @@ if (isBrowserNotSupportDialog) {
 		}
 	});
 }
+// spin
+window.addEventListener('load', function() {
+	const formBlock = document.querySelector('.form');
+	const spinButton = document.querySelector('.form__spin-button');
+	const formSpin = document.querySelector('.rotate');
+
+	spinButton.addEventListener('click', function() {
+		if (!formBlock.classList.contains('spin-end')) {
+			formSpin.classList.add('rotation');
+
+			setTimeout(function() {
+				spinButton.disabled = true;
+				formBlock.classList.add('spin-end');
+				console.log($('.form__spin'));
+				$('.form__spin').hide(150);
+				$('.form__discount').hide(150);
+				$('.form__content').show(150);
+			}, 9000);
+		}
+	});
+});
